@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  selenium:
+    image: "selenium/standalone-chrome${SELENIUM_DEBUG}"
+    container_name: "${SELENIUM_CONTAINER_NAME}"
+    ports:
+      - "${SELENIUM_VNC_PORT}:${SELENIUM_VNC_PORT}"
+    expose:
+      - "${SELENIUM_PORT}"
+    volumes:
+      - /dev/shm:/dev/shm
+  skypium:
+    image: "node:alpine"
+    container_name: skypium
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    environment:
+      - "SELENIUM_REMOTE_URL=http://${SELENIUM_CONTAINER_NAME}:${SELENIUM_PORT}/wd/hub"
+    command: "./wait-for/wait-for ${SELENIUM_CONTAINER_NAME}:${SELENIUM_PORT} -- node server.js"
+    depends_on:
+      - selenium

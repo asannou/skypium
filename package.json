@@ -1,0 +1,30 @@
+{
+  "name": "skypium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/asannou/skypium.git"
+  },
+  "keywords": [
+    "skype",
+    "selenium",
+    "webdriver"
+  ],
+  "author": "asannou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asannou/skypium/issues"
+  },
+  "homepage": "https://github.com/asannou/skypium#readme"
+}
