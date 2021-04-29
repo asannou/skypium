@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "20:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: selenium-webdriver
+    versions:
+    - 4.0.0-alpha.8
+    - 4.0.0-beta.1
+    - 4.0.0-beta.2
